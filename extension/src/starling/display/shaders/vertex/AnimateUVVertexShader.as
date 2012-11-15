@@ -30,7 +30,15 @@ package starling.display.shaders.vertex
 			var phase:Number = getTimer()/1000;
 			var uOffset:Number = phase * uSpeed;
 			var vOffset:Number = phase * vSpeed;
-			
+			/**
+			Ios device if the program is running a long period of time,
+			uOffset, or vOffset get a larger value, shape into a mosaic.
+			The running time is longer,the more serious the situation.
+			This code:
+			var uOffset:Number = phase * uSpeed % 1;
+			var vOffset:Number = phase * vSpeed % 1;
+			will fixed up it;
+			**/
 			context.setProgramConstantsFromVector( Context3DProgramType.VERTEX, firstRegister, Vector.<Number>([ uOffset, vOffset, 0, 0 ]) );
 		}
 	}
