@@ -28,8 +28,8 @@ package starling.display.shaders.vertex
 		override public function setConstants( context:Context3D, firstRegister:int ):void
 		{
 			var phase:Number = getTimer()/1000;
-			var uOffset:Number = phase * uSpeed;
-			var vOffset:Number = phase * vSpeed;
+			var uOffset:Number = phase * uSpeed % 1;
+			var vOffset:Number = phase * vSpeed % 1;
 			/**
 			Ios device if the program is running a long period of time,
 			uOffset, or vOffset get a larger value, shape into a mosaic.
