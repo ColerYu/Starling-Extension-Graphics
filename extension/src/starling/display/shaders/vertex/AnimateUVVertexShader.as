@@ -36,7 +36,7 @@ package starling.display.shaders.vertex
 			The running time is longer,the more serious the situation.
 			This code:
 			var uOffset:Number = phase * uSpeed % 1;
-			var vOffset:Number = phase * vSpeed % 1;
+			var vOffset:Number = phase * vSpeed % 1; 
 			will fixed up it;
 			**/
 			context.setProgramConstantsFromVector( Context3DProgramType.VERTEX, firstRegister, Vector.<Number>([ uOffset, vOffset, 0, 0 ]) );
